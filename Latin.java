@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PigLatin
+public class Latin
 {
 	public static void main (String[] args)
 	{
@@ -17,21 +17,24 @@ public class PigLatin
 
 class PigLatin
 {
-	/*
-	 * Precondition:  s is a String containing a single word.
-	 * Postcondition: returns a word converted into Pig Latin according to the appropriate rule.
- 	 * 
-	 */
-    public static String isVowel(String s){
-        if (s.substring(0,1) == "a") || (s.substring(0,1) == "e") || (s.substring(0,1) == "i") || (s.substring(0,1) == "o") || (s.substring(0,1) == "u"){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+	static boolean vowel;
+	static String cv;
+
+	public static boolean isVowel(String s){
+		if (s.substring(0,1) == "a" || (s.substring(0,1) == "e") || (s.substring(0,1) == "i") || (s.substring(0,1) == "o") || (s.substring(0,1) == "u")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 	public static String convertWord(String s)
 	{
+		//if (s.substring(0,1) == "a" || (s.substring(0,1) == "e") || (s.substring(0,1) == "i") || (s.substring(0,1) == "o") || (s.substring(0,1) == "u")){
+			
+		
+
      		 return "";      // This statement is provided to allow initial compiling.
 	}  
    
