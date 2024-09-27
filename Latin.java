@@ -17,25 +17,38 @@ public class Latin
 
 class PigLatin
 {
-	static boolean vowel;
 	static String cv;
 
-	public static boolean isVowel(String s){
-		if (s.substring(0,1) == "a" || (s.substring(0,1) == "e") || (s.substring(0,1) == "i") || (s.substring(0,1) == "o") || (s.substring(0,1) == "u")){
-			return true;
+	public static boolean isVowel(String l){
+		boolean vowel = false;
+		if (l.equals("a") || l.equals("e") || l.equals("i") || l.equals("o") || l.equals("u")){
+			vowel = true;
 		}
-		else{
-			return false;
-		}
+		return vowel;
+	}
+
+	public static String startsVowel(String s){
+		return s + "way";
+	}
+
+	public static String startsConsonant(String s){
+		s = s.substring(1) + s.substring(0,1) + "ay";
+		return s;
 	}
 
 	public static String convertWord(String s)
-	{
-		//if (s.substring(0,1) == "a" || (s.substring(0,1) == "e") || (s.substring(0,1) == "i") || (s.substring(0,1) == "o") || (s.substring(0,1) == "u")){
-			
+	{	
+		String letter = s.substring(0,1);
+		boolean b = isVowel(letter);
+		if (b == true){
+			String newWord = startsVowel(s);
+			return newWord;
+		}
+		else{
+			String newWord = startsConsonant(s);
+			return newWord;
+		}
 		
-
-     		 return "";      // This statement is provided to allow initial compiling.
 	}  
    
 }
