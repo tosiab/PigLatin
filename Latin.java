@@ -9,7 +9,7 @@ public class Latin
 		System.out.print("Enter a string: ");
 		String str = input.nextLine();
         		 	
-		String piggie = PigLatin.convertWord(str);
+		String piggie = PigLatin.convertSentence(str);
 		System.out.println();
 		System.out.println("Converted word: " + piggie);
 	}
@@ -43,12 +43,40 @@ class PigLatin
 		if (b == true){
 			String newWord = startsVowel(s);
 			return newWord;
-		}
+			}
 		else{
+			String letters = s.substring(1,2);
+			boolean c = isVowel(letters);
+			if (c == false){
+				String newWord = startsTwoConsonant(s);
+				return newWord;
+			}
+			else{
 			String newWord = startsConsonant(s);
 			return newWord;
+			}
 		}
 		
 	}  
+
+	public static String startsTwoConsonant(String s){
+			s = s.substring(2) + s.substring(0,2) + "ay";
+			return s;
+	}
+
+	public static String convertSentence(String s){
+		int first = s.indexOf(" ");
+		String resp = convertWord(s.substring(0, first));
+		String newl = s.substring(first+1);
+		int sec = newl.indexOf(" ");
+		String respt = (" " + convertWord(newl.substring(0, sec)));
+		newl = newl.substring(sec+1);
+		/*int tri = newl.indexOf(" ");*/
+		String resptri = (" " + convertWord(newl.substring(0)));
+		resp = resp + respt + resptri;
+		return resp;
+	}
+
+
    
 }
